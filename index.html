@@ -29,22 +29,22 @@
       smartypants: false
     });
     
-    $(function() {
-      function render(file) {
-        var extension = getExtension(file);
-        request.get(file, function(res){
-          if(Math.floor(res.status/200) === 1) {
-            var markup;
-            if(extension === "md") {
-              markup = marked(res.text);
-            }
-            $('.main-content').html(markup);
+    function render(file, node) {
+      var extension = getExtension(file);
+      request.get(file, function(res){
+        if(Math.floor(res.status/200) === 1) {
+          var markup;
+          if(extension === "md") {
+            markup = marked(res.text);
           }
-        });
-      }
-    
-      render("test.md");
-    });
+          $(node).html(markup);
+        }
+      });
+    }
+
+    render("pages/DayOne.md", ".day1-schedule");
+    render("pages/DayTwo.md", ".day2-schedule");
+
     </script>
   </head>
   <body>
@@ -58,255 +58,11 @@
 
 
     <section class="main-content">
-      <section class="schedule">
-
-        <h1>Day 1</h1>
-        <table>
-          <tr>
-            <th></th>
-            <th>Rm1</th>
-            <th>Rm2</th>
-            <th>Rm3</th>
-            <th>Rm4</th>
-            <th>Rm5</th>
-            <th>Rm6</th>
-          </tr>
-          <tr>
-            <td></td>
-            <th>G104</th>
-            <th>G105</th>
-            <th>G106</th>
-            <th>G107</th>
-            <th>C104</th>
-            <th>G104</th>
-          </tr>
-          <tr>
-            <th>1:45</th>
-            <td>Aperture Medical</td>
-            <td>Audacy</td>
-            <td>LUCID</td>
-            <td>VR</td>
-            <td>UProspie</td>
-            <td>Shoes Incorporated</td>
-            <td>Huzza</td>
-          </tr>
-          <tr>
-            <th>2:00</th>
-            <td>Miti Health</td>
-            <td>Simple Health</td>
-            <td>Optima</td>
-            <td>RexFit</td>
-            <td>ArtsUp</td>
-            <td>QuickSpace</td>
-            <td>A2Z China</td>
-          </tr>
-          <tr>
-            <th>2:15</th>
-            <td>Apprentice Field Suite</td>
-            <td>SmartLens</td>
-            <td>Parakeet</td>
-            <td>SomaSole Inc.</td>
-            <td>GlamPass</td>
-            <td>Bandura Games</td>
-            <td>Codehub</td>
-          </tr>
-          <tr>
-            <th>2:30</th>
-            <td>Beacon</td>
-            <td>FirstStep</td>
-            <td>Qollaboration</td>
-            <td>MYcrogrid</td>
-            <td>Couch Potatoes</td>
-            <td>Civil</td>
-            <td>Libra</td>
-          </tr>
-          <tr>
-            <th>2:45</th>
-            <td>DoseDoctor</td>
-            <td>Torix Medical</td>
-            <td>Quorum</td>
-            <td>Create Cuisine</td>
-            <td>FindX</td>
-            <td>Wolio</td>
-            <td>Panotip</td>
-          </tr>
-          <tr>
-            <th>3:00</th>
-            <td>Gayle</td>
-            <td>White Light Medical</td>
-            <td>Rhythmiq</td>
-            <td>Ale Mail</td>
-            <td>Frucket</td>
-            <td>Ready!</td>
-            <td>TOTO Express</td>
-          </tr>
-          <tr>
-            <th>3:15</th>
-            <td>Legacy Partners</td>
-            <td>Wickit Medical</td>
-            <td>BioCarbon Engineering</td>
-            <td>Cerulean Robotics</td>
-            <td>Verbatm</td>
-            <td>UnifiApp</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>3:30</th>
-            <td>Rehab Hero</td>
-            <td>Genemetric</td>
-            <td>Solfice CivilMaps</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>3:45</th>
-            <td>UberHealth for Families</td>
-            <td>TocoTrack</td>
-            <td>Bounty Box</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>4:00</th>
-            <td>Call Ambulance</td>
-            <td>FlossTime</td>
-            <td>XStream</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <h1>Day 2</h1>
-        <table>
-          <tr>
-            <th></th>
-            <th>Rm1</th>
-            <th>Rm2</th>
-            <th>Rm3</th>
-            <th>Rm4</th>
-            <th>Rm5</th>
-            <th>Rm6</th>
-            <th>Rm7</th>
-          </tr>
-          <tr>
-            <td></td>
-            <th>E106</th>
-            <th>E107</th>
-            <th>E108</th>
-            <th>E109</th>
-            <th>E110</th>
-            <th>G104</th>
-            <th>G105</th>
-          </tr>
-          <tr>
-            <th>1:45</th>
-            <td>Footsteps</td>
-            <td>Opticent Health</td>
-            <td>JetInsight</td>
-            <td>POVI, AntWish Inc</td>
-            <td>Eden</td>
-            <td>Sessions</td>
-            <td>MagicChalk</td>
-          </tr>
-          <tr>
-            <th>2:00</th>
-            <td>Miti Health</td>
-            <td>Simple Health</td>
-            <td>Optima</td>
-            <td>RexFit</td>
-            <td>ArtsUp</td>
-            <td>QuickSpace</td>
-            <td>A2Z China</td>
-          </tr>
-          <tr>
-            <th>2:15</th>
-            <td>Apprentice Field Suite</td>
-            <td>SmartLens</td>
-            <td>Parakeet</td>
-            <td>SomaSole Inc.</td>
-            <td>GlamPass</td>
-            <td>Bandura Games</td>
-            <td>Codehub</td>
-          </tr>
-          <tr>
-            <th>2:30</th>
-            <td>Beacon</td>
-            <td>FirstStep</td>
-            <td>Qollaboration</td>
-            <td>MYcrogrid</td>
-            <td>Couch Potatoes</td>
-            <td>Civil</td>
-            <td>Libra</td>
-          </tr>
-          <tr>
-            <th>2:45</th>
-            <td>DoseDoctor</td>
-            <td>Torix Medical</td>
-            <td>Quorum</td>
-            <td>Create Cuisine</td>
-            <td>FindX</td>
-            <td>Wolio</td>
-            <td>Panotip</td>
-          </tr>
-          <tr>
-            <th>3:00</th>
-            <td>Gayle</td>
-            <td>White Light Medical</td>
-            <td>Rhythmiq</td>
-            <td>Ale Mail</td>
-            <td>Frucket</td>
-            <td>Ready!</td>
-            <td>TOTO Express</td>
-          </tr>
-          <tr>
-            <th>3:15</th>
-            <td>Legacy Partners</td>
-            <td>Wickit Medical</td>
-            <td>BioCarbon Engineering</td>
-            <td>Cerulean Robotics</td>
-            <td>Verbatm</td>
-            <td>UnifiApp</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>3:30</th>
-            <td>Rehab Hero</td>
-            <td>Genemetric</td>
-            <td>Solfice CivilMaps</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>3:45</th>
-            <td>UberHealth for Families</td>
-            <td>TocoTrack</td>
-            <td>Bounty Box</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>4:00</th>
-            <td>Call Ambulance</td>
-            <td>FlossTime</td>
-            <td>XStream</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-      </section>
-
+      <h1>Schedule</h1>
+      <h2>Day 1</h1>
+      <section class="day1-schedule"></section>
+      <h2>Day 2</h1>
+      <section class="day2-schedule"></section>
     </section>
 
   

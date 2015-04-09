@@ -1,7 +1,6 @@
-|Room:|Rm1|Rm2|Rm3|Rm4|Rm5|Rm6|
+|Time|Rm1|Rm2|Rm3|Rm4|Rm5|Rm6|
 |-----|-----|-----|-----|-----|-----|-----|
-|GSB Rooms:|G104|G105|G106|G107|C104|P101|
-|START:|Medical Tech|Enterprise|Consumer products|Software Service Rm1|Software Service Rm2|FINANCIAL |
+||G104|G105|G106|G107|C104|P101|
 |1:45|Aperture Medical|Audacy|LUCID VR|UProspie|Shoes Incorporated|Huzza|
 |2:00|Mesopharm Therapeutics Inc.|Healthy Horizons Lactation Services|Magnetos|YCore|inner circle|TILIKIN Logistics|
 |2:15|Genesis Technologies|Inquix|Vurge|FoodMatix|Kibbit|Helping Hands Healthcare|
@@ -11,4 +10,3 @@
 |3:15|müvr|SnapCart|RISE and SHINE|aProlix|PartyPuzzle|New Hope Ecotech|
 |3:30|neoLIFE therapeutics|Serve||soundGrow|Mailias|NowKash|
 |3:45|NeurEcho|FirstResponse Disaster Solutions||||[Alter]|
-|4:00||Assured|||||
