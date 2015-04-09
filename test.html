@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/marked/lib/marked.js"></script>
+<script src="bower_components/superagent/superagent.js"></script>
+<script>
+
+var request = superagent;
+var getExtension = function(filename) {
+  return filename.split('.').pop();
+};
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
+
+$(function() {
+  function render(file) {
+    var extension = getExtension(file);
+    request.get(file, function(res){
+      if(Math.floor(res.status/200) === 1) {
+        var markup;
+        if(extension === "md") {
+          markup = marked(res.text);
+        }
+        $('.main-content').html(markup);
+      }
+    });
+  }
+
+  render("test.md");
+});
+</script>
+</head>
+
+<body>
+<div class="main-content"></div>
+</body>
+</html>
