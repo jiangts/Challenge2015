@@ -1,4 +1,4 @@
-[link](#tree)
+[link](#tree-view)
 
 #hello
 
@@ -8,7 +8,7 @@ amazing wow incredible
 
 cool
 
-#tree
+#tree view
 
 - wojaweoifjaoweifjaiowef
 - awefaoweifjaowiejfa
