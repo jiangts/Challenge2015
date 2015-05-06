@@ -1,28 +1,24 @@
 dayOne =
 """
-|Aperture Medical|Audacy|LUCID VR|UProspie|Shoes Incorporated|Huzza|
-|Mesopharm Therapeutics Inc.|Healthy Horizons Lactation Services|Magnetos|YCore|inner circle|TILIKIN Logistics|
-|Genesis Technologies|Inquix|Vurge|FoodMatix|Kibbit|Helping Hands Healthcare|
-|Intact Therapeutics|ODECI Inc.|Ebotic|Give A Day Global|"Loro (Closer Labs Inc.)"|TapTax|
-|Molecular Cosmetics|NeoSTREAM/NeoGenesis Inc|Nom Naturals|8packs|The Rook|Leprechaun|
-|EVIMED- Central Venous Catheter Connector|Spectrum|NexTint|Acquainted|CookNook|MarketRPM|
-|müvr|SnapCart|RISE and SHINE|aProlix|PartyPuzzle|New Hope Ecotech|
-|neoLIFE therapeutics|Serve||soundGrow|Mailias|NowKash|
-|NeurEcho|FirstResponse Disaster Solutions||||[Alter]|
+|First Step          | Y Core                | Beacon                           | Mesopharm Therapeutics              | Evimed - Central Venous Catheter Connector | Neolife Therapeutics     |
+|Legacy Partners     | Miti Health           | FirstResponse Disaster Solutions | NexTint                             | Give A Day Global                          | CookNook                 |
+|Spectrum            | TOTO Express          | Bounty Box                       | Create Cuisine                      | Bandura Games                              | FoodMatix                |
+|                    | BioCarbon Engineering |                                  |                                     |                                            |                          |
 """
 
 dayTwo =
 """
-|Footsteps|Opticent Health|JetInsight|POVI, AntWish Inc|Eden|Sessions|MagicChalk|
-|Miti Health|SimpleHealth|Optima|RexFit|ArtsUp|QuickSpace|A2Z China|
-|Apprentice Field Suite|SmartLens|Parakeet|SomaSole Inc|GlamPass|Bandura Games|Codehub|
-|Beacon|FirstStep|Qollaboration|MYcrogrid|Couch Potatoes|Civil|Libra|
-|DoseDoctor|Torix Medical|Quorum|Create Cusine|FindX|Wolio|Panotip|
-|Gayle|White Light Medical - AccuSpine|Rhythmiq|Ale Mail|Frucket|Ready!|TOTO Express|
-|Legacy Partners|Wickit Medical|BioCarbon Engineering|Cerulean Robotics|Verbatm|UnifiApp||
-|Rehab Hero|Genemetric|Solfice CivilMaps|||||
-|UberHealth for families|TocoTrack|Bounty Box|||||
-|Call Ambulance|FlossTime|XStream|||||
+| Legacy Partners        |                                            | TOTO Express                        | FirstResponse Disaster Solutions | NexTint                            | Give A Day Global        | Setup  |
+| Miti Health            | Neolife Therapeutics                       | BioCarbon Engineering               | Bounty Box                                     | Create Cuisine                     | Bandura Games            | Setup  |
+| Beacon                 | Mesopharm Therapeutics                     | Quorum                              | Spectrum                                       | CookNook                           | FoodMatix                | Setup  |
+|                        |                                            |                                     |                                                |                                    |                          |        |
+| First Step             | White Light Medical                        | Qollaboration                       | SnapCart                                       | MYcrogrid                          | Eden                     | Setup  |
+| Apprentice Field Suite | FlossTime                                  | Healthy Horizons Lactation Services | Tilikin Logistics                              | Cerulean Robotics                  | SoundGrow                | Setup  |
+| Footsteps              | Genesis Technologies                       | Solfice CivilMaps                   | ODECI                                          | Nom Naturals                       | Ready                    | Setup  |
+|                        |                                            |                                     |                                                |                                    |                          |        |
+| smartlens              | Simple Health                              | Assured                             | Serve                                          | aProlix                            | Party Puzzle             | Setup  |
+|                        | Aperture Medical                           | JetInsight                          | Audacy                                         | 8packs                             | UnifiApp                 | Setup  |
+|                        | Evimed - Central Venous Catheter Connector |                                     | XStream                                        | SomaSole                           | Kibbit                   | Setup  |
 """
 
 linkId = (name) ->
@@ -33,6 +29,7 @@ printLinkedTable = (day) ->
   tableLinked = []
   for team in table
     if team.length > 0 and team isnt "\n"
+      team = team.trim()
       tableLinked.push("[#{team}](##{linkId(team)})")
     else
       tableLinked.push(team)
